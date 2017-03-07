@@ -1,0 +1,30 @@
+body {
+	font-family: "Franklin Gothic Medium";
+	background-color: #424242;
+	padding: 5px;
+	font-size: 13px;
+}
+
+#rectangle {
+	height: 200px;
+	width: 200px;
+	text-align: center
+}
+
+#circle {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
+
+#red {
+	background-color: red;
+}
+
+#green {
+	background-color: green;
+}
+
+#blue {
+	background-color: blue;
+}

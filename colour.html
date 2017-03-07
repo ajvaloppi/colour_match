@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="colourMatch">
+<head>
+	<meta charset="UTF-8">
+	<title>COLOUR MATCH</title>
+	<link rel="stylesheet" href="css/styling.css"/>
+</head>
+<body>
+	<div id="header">COLOUR MATCH</div>
+	<div id="body">
+		<div id="matcher" matcher-directive ng-controller="matcherController"></div>
+		<div id="adjuster" adjuster-directive ng-controller="adjusterController"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="angular/app.js" type="text/javascript"></script>
+
+	<script src="angular/services/matcher.js" type="text/javascript"></script>
+	<script src="angular/services/adjuster.js" type="text/javascript"></script>
+
+	<script src="angular/directives/matcher.js" type="text/javascript"></script>
+	<script src="angular/directives/adjuster.js" type="text/javascript"></script>
+	
+</body>
+</html>
