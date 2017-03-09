@@ -12,21 +12,21 @@ body {
 #rectangle {
 	display: inline-block;
 	position: relative;
-	width: 50%;
+	width: 30%;
 	height: auto;
-	padding-top: 25%;
-	padding-bottom: 25%;
+	padding-top: 15%;
+	padding-bottom: 15%;
 }
 
 #circle {
 	display: inline-block;
 	position: absolute;
 	border-radius: 50%;
-	width: 50%;
+	width: 60%;
 	height: auto;
-	padding-top: 50%;
-	top: 25%;
-    left: 25%;
+	padding-top: 60%;
+	top: 20%;
+    left: 20%;
 }
 
 #adjuster {
