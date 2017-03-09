@@ -1,33 +1,34 @@
 <div id="red">
-	<div class="red-up up">
+	<div class="red-up up" ng-click="redUp()">
 		<button>/\</button>
 	</div>
 	<div class="red-count count">
-		{{red_count}}
+		{{red_count}} <span ng-show="done">{{match_red}}</span>
 	</div>
-	<div class="red-down down">
-		<button>\/</button>
+	<div class="red-down down" ng-click="redDown()">
+		<button ng-click="">\/</button>
 	</div>
 </div>
 <div id="green">
-	<div class="green-up up">
+	<div class="green-up up" ng-click="greenUp()">
 		<button>/\</button>
 	</div>
 	<div class="green-count count">
-			{{green_count}}
+			{{green_count}} <span ng-show="done">{{match_green}}</span>
 	</div>
-	<div class="green-down down">
+	<div class="green-down down" ng-click="greenDown()">
 		<button>\/</button>
 	</div>
 </div>
 <div id="blue">
-	<div class="blue-up up">
+	<div class="blue-up up" ng-click="blueUp()">
 		<button>/\</button>
 	</div>
 	<div class="blue-count count">
-		{{blue_count}}
+		{{blue_count}} <span ng-show="done">{{match_blue}}</span>
 	</div>
-	<div class="blue-down down">
+	<div class="blue-down down" ng-click="blueDown()">
 		<button>\/</button>
 	</div>
 </div>
+<button ng-click="check()">Check!</button>
