@@ -5,16 +5,32 @@ body {
 	font-size: 13px;
 }
 
+#matcher {
+	display: inline;
+}
+
 #rectangle {
-	height: 200px;
-	width: 200px;
-	text-align: center
+	display: inline-block;
+	position: relative;
+	width: 50%;
+	height: auto;
+	padding-top: 25%;
+	padding-bottom: 25%;
 }
 
 #circle {
-	height: 100px;
-	width: 100px;
+	display: inline-block;
+	position: absolute;
 	border-radius: 50%;
+	width: 50%;
+	height: auto;
+	padding-top: 50%;
+	top: 25%;
+    left: 25%;
+}
+
+#adjuster {
+	display: inline-block;
 }
 
 #red {
