@@ -41,9 +41,41 @@ angular.module('adjuster', [])
 		$rootScope.$emit('colourChange');
 	};
 
+	$scope.cyanChange = function () {
+		AdjusterService.setCyan($scope.cyan_count);
+		$rootScope.$emit('colourChange');
+	};
+
+	$scope.magentaChange = function () {
+		AdjusterService.setMagenta($scope.magenta_count);
+		$rootScope.$emit('colourChange');
+	};
+
+
+	$scope.yellowChange = function () {
+		AdjusterService.setYellow($scope.yellow_count);
+		$rootScope.$emit('colourChange');
+	};
+
+	$scope.blackChange = function () {
+		AdjusterService.setBlack($scope.black_count);
+		$rootScope.$emit('colourChange');
+	};
+
 	$scope.check = function () {
 		$scope.done = true;
 	}
+
+	$rootScope.$on('adjustSliders', function (event, data) {
+			$scope.red_count = AdjusterService.getRedPercent();
+			$scope.green_count = AdjusterService.getGreenPercent();
+			$scope.blue_count = AdjusterService.getBluePercent();
+
+			$scope.cyan_count = AdjusterService.getCyan();
+			$scope.magenta_count = AdjusterService.getMagenta();
+			$scope.yellow_count = AdjusterService.getYellow();
+			$scope.black_count = AdjusterService.getBlack();
+		})
 }])
 
 .directive('adjusterDirective', function() {
