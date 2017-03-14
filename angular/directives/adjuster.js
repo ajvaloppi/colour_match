@@ -6,9 +6,9 @@ angular.module('adjuster', [])
 .controller('adjusterController', ['$scope', '$rootScope', 'AdjusterService', 'MatcherService', function($scope, $rootScope, AdjusterService, MatcherService) {
 	$scope.done = false;
 
-	$scope.red_count = AdjusterService.getRed();
-	$scope.green_count = AdjusterService.getGreen();
-	$scope.blue_count = AdjusterService.getBlue();
+	$scope.red_count = AdjusterService.getRedPercent();
+	$scope.green_count = AdjusterService.getGreenPercent();
+	$scope.blue_count = AdjusterService.getBluePercent();
 
 	$scope.match_red = MatcherService.getRed();
 	$scope.match_green = MatcherService.getGreen();

@@ -6,18 +6,18 @@ angular.module('matcher', [])
 		$scope.rectangle = "rectangle";
 		$scope.circle = "circle";
 
-		$scope.adjust_red = AdjusterService.getRed();
-		$scope.adjust_green = AdjusterService.getGreen();
-		$scope.adjust_blue = AdjusterService.getBlue();
+		$scope.adjust_red = AdjusterService.getRedCSS();
+		$scope.adjust_green = AdjusterService.getGreenCSS();
+		$scope.adjust_blue = AdjusterService.getBlueCSS();
 
 		$scope.match_red = MatcherService.getRed();
 		$scope.match_green = MatcherService.getGreen();
 		$scope.match_blue = MatcherService.getBlue();
 
 		$rootScope.$on('colourChange', function (event, data) {
-			$scope.adjust_red = AdjusterService.getRed();
-			$scope.adjust_green = AdjusterService.getGreen();
-			$scope.adjust_blue = AdjusterService.getBlue();
+			$scope.adjust_red = AdjusterService.getRedCSS();
+			$scope.adjust_green = AdjusterService.getGreenCSS();
+			$scope.adjust_blue = AdjusterService.getBlueCSS();
 		})
 }])
 

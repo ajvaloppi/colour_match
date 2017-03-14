@@ -1,40 +1,66 @@
 angular.module('colourMatch').factory('AdjusterService',
     [
     function () {
-        var red = Math.floor(Math.random() * 51)*5;
-        var green = Math.floor(Math.random() * 51)*5;
-        var blue = Math.floor(Math.random() * 51)*5;
+        var redCSS = Math.floor(Math.random() * 255);
+        var greenCSS = Math.floor(Math.random() * 255);
+        var blueCSS = Math.floor(Math.random() * 255);
+        
+        var redPercent = Math.floor((redCSS/255)*100);
+        var greenPercent = Math.floor((greenCSS/255)*100);
+        var bluePercent = Math.floor((blueCSS/255)*100);
+
+        console.log(redCSS, redPercent);
+        console.log(greenCSS, greenPercent);
+        console.log(blueCSS, bluePercent);
 
         return ({
-            getRed: getRed,
+            getRedPercent: getRedPercent,
+            getRedCSS: getRedCSS,
             setRed: setRed,
-            getGreen: getGreen,
+            getGreenPercent: getGreenPercent,
+            getGreenCSS: getGreenCSS,
             setGreen: setGreen,
-            getBlue: getBlue,
+            getBluePercent: getBluePercent,
+            getBlueCSS: getBlueCSS,
             setBlue: setBlue,
         });
 
-        function getRed() {
-            return red;
+        function getRedPercent() {
+            return redPercent;
         }
 
-        function setRed(newRed) {
-            red = newRed;
+        function getRedCSS() {
+            return redCSS;
         }
 
-        function getGreen() {
-            return green;
+        function setRed(newRedPercent) {
+            redPercent = newRedPercent;
+            redCSS = Math.floor((newRedPercent*255)/100);
         }
 
-        function setGreen(newGreen) {
-            green = newGreen;
+        function getGreenPercent() {
+            return greenPercent;
         }
 
-        function getBlue() {
-            return blue;
+        function getGreenCSS() {
+            return greenCSS;
         }
 
-        function setBlue(newBlue) {
-            blue = newBlue;
+        function setGreen(newGreenPercent) {
+            greenPercent = newGreenPercent;
+            greenCSS = Math.floor((newGreenPercent*255)/100);
+        }
+
+        function getBluePercent() {
+            return bluePercent;
+        }
+
+        function getBlueCSS() {
+            return blueCSS;
+        }
+
+        function setBlue(newBluePercent) {
+            bluePercent = newBluePercent;
+            blueCSS = Math.floor((newBluePercent*255)/100);
         }    
 }]);
