@@ -1,19 +1,19 @@
-<div id="red">
+<div class="adjustColour" id="red">
 	<div class="red-count count">
 		{{red_count}}% <span ng-show="done">{{match_red}}%</span>
 	</div>
-	<input type="range" id="redRange" value="{{red_count}}" ng-model="red_count" ng-change="redChange()">
+	<input type="range" class="colourRange" id="redRange" value="{{red_count}}" ng-model="red_count" ng-change="redChange()">
 </div>
-<div id="green">
+<div class="adjustColour" id="green">
 	<div class="green-count count">
 			{{green_count}}% <span ng-show="done">{{match_green}}%</span>
 	</div>
-	<input type="range" id="greenRange" value="{{green_count}}" ng-model="green_count" ng-change="greenChange()">
+	<input type="range" class="colourRange" id="greenRange" value="{{green_count}}" ng-model="green_count" ng-change="greenChange()">
 </div>
-<div id="blue">
+<div class="adjustColour" id="blue">
 	<div class="blue-count count">
 		{{blue_count}}% <span ng-show="done">{{match_blue}}%</span>
 	</div>
-	<input type="range" id="blueRange" value="{{blue_count}}" ng-model="blue_count" ng-change="blueChange()">
+	<input type="range" class="colourRange" id="blueRange" value="{{blue_count}}" ng-model="blue_count" ng-change="blueChange()">
 </div>
 <button ng-click="check()">Check!</button>
