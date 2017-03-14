@@ -14,6 +14,12 @@ angular.module('adjuster', [])
 	$scope.match_green = MatcherService.getGreenPercent();
 	$scope.match_blue = MatcherService.getBluePercent();
 
+	$scope.match_black = 100 - (Math.max(Math.max($scope.match_red, $scope.match_green), $scope.match_blue));
+
+    $scope.match_cyan = Math.floor(((100 - $scope.match_red - $scope.match_black)/(100 - $scope.match_black))*100);
+    $scope.match_magenta = Math.floor(((100 - $scope.match_green - $scope.match_black)/(100 - $scope.match_black))*100);
+    $scope.match_yellow = Math.floor(((100 - $scope.match_blue - $scope.match_black)/(100 - $scope.match_black))*100);
+
 	$scope.cyan_count = AdjusterService.getCyan();
 	$scope.magenta_count = AdjusterService.getMagenta();
 	$scope.yellow_count = AdjusterService.getYellow();
