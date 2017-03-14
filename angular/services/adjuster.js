@@ -9,10 +9,6 @@ angular.module('colourMatch').factory('AdjusterService',
         var greenPercent = Math.floor((greenCSS/255)*100);
         var bluePercent = Math.floor((blueCSS/255)*100);
 
-        console.log(redCSS, redPercent);
-        console.log(greenCSS, greenPercent);
-        console.log(blueCSS, bluePercent);
-
         return ({
             getRedPercent: getRedPercent,
             getRedCSS: getRedCSS,

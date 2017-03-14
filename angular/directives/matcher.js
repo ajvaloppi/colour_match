@@ -10,9 +10,9 @@ angular.module('matcher', [])
 		$scope.adjust_green = AdjusterService.getGreenCSS();
 		$scope.adjust_blue = AdjusterService.getBlueCSS();
 
-		$scope.match_red = MatcherService.getRed();
-		$scope.match_green = MatcherService.getGreen();
-		$scope.match_blue = MatcherService.getBlue();
+		$scope.match_red = MatcherService.getRedCSS();
+		$scope.match_green = MatcherService.getGreenCSS();
+		$scope.match_blue = MatcherService.getBlueCSS();
 
 		$rootScope.$on('colourChange', function (event, data) {
 			$scope.adjust_red = AdjusterService.getRedCSS();

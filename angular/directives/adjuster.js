@@ -10,9 +10,9 @@ angular.module('adjuster', [])
 	$scope.green_count = AdjusterService.getGreenPercent();
 	$scope.blue_count = AdjusterService.getBluePercent();
 
-	$scope.match_red = MatcherService.getRed();
-	$scope.match_green = MatcherService.getGreen();
-	$scope.match_blue = MatcherService.getBlue();
+	$scope.match_red = MatcherService.getRedPercent();
+	$scope.match_green = MatcherService.getGreenPercent();
+	$scope.match_blue = MatcherService.getBluePercent();
 
 	$scope.redChange = function () {
 		AdjusterService.setRed($scope.red_count);
