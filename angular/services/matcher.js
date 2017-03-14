@@ -1,13 +1,13 @@
 angular.module('colourMatch').factory('MatcherService',
     [
     function () {
-        var redCSS = Math.floor(Math.random() * 255);
-        var greenCSS = Math.floor(Math.random() * 255);
-        var blueCSS = Math.floor(Math.random() * 255);
+        var redCSS = Math.round(Math.random() * 255);
+        var greenCSS = Math.round(Math.random() * 255);
+        var blueCSS = Math.round(Math.random() * 255);
         
-        var redPercent = Math.floor((redCSS/255)*100);
-        var greenPercent = Math.floor((greenCSS/255)*100);
-        var bluePercent = Math.floor((blueCSS/255)*100);
+        var redPercent = Math.round((redCSS/255)*100);
+        var greenPercent = Math.round((greenCSS/255)*100);
+        var bluePercent = Math.round((blueCSS/255)*100);
 
         return ({
             getRedPercent: getRedPercent,
@@ -31,7 +31,7 @@ angular.module('colourMatch').factory('MatcherService',
 
         function setRed(newRedPercent) {
             redPercent = newRedPercent;
-            redCSS = Math.floor((newRedPercent*255)/100);
+            redCSS = Math.round((newRedPercent*255)/100);
         }
 
         function getGreenPercent() {
@@ -44,7 +44,7 @@ angular.module('colourMatch').factory('MatcherService',
 
         function setGreen(newGreenPercent) {
             greenPercent = newGreenPercent;
-            greenCSS = Math.floor((newGreenPercent*255)/100);
+            greenCSS = Math.round((newGreenPercent*255)/100);
         }
 
         function getBluePercent() {
@@ -57,6 +57,6 @@ angular.module('colourMatch').factory('MatcherService',
 
         function setBlue(newBluePercent) {
             bluePercent = newBluePercent;
-            blueCSS = Math.floor((newBluePercent*255)/100);
+            blueCSS = Math.round((newBluePercent*255)/100);
         } 
 }]);

@@ -1,19 +1,19 @@
 angular.module('colourMatch').factory('AdjusterService',
     [
     function () {
-        var redCSS = Math.floor(Math.random() * 255);
-        var greenCSS = Math.floor(Math.random() * 255);
-        var blueCSS = Math.floor(Math.random() * 255);
+        var redCSS = Math.round(Math.random() * 255);
+        var greenCSS = Math.round(Math.random() * 255);
+        var blueCSS = Math.round(Math.random() * 255);
         
-        var redPercent = Math.floor((redCSS/255)*100);
-        var greenPercent = Math.floor((greenCSS/255)*100);
-        var bluePercent = Math.floor((blueCSS/255)*100);
+        var redPercent = Math.round((redCSS/255)*100);
+        var greenPercent = Math.round((greenCSS/255)*100);
+        var bluePercent = Math.round((blueCSS/255)*100);
 
         var blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-        var cyanPercent = Math.floor(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-        var magentaPercent = Math.floor(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-        var yellowPercent = Math.floor(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+        var cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
+        var magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
+        var yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
 
         return ({
             getRedPercent: getRedPercent,
@@ -36,22 +36,22 @@ angular.module('colourMatch').factory('AdjusterService',
         });
 
         function recalculateRGB() {
-            redPercent = Math.floor(((100 - cyanPercent) * (100 - blackPercent))/100);
-            redCSS = Math.floor((redPercent*255)/100);
+            redPercent = Math.round(((100 - cyanPercent) * (100 - blackPercent))/100);
+            redCSS = Math.round((redPercent*255)/100);
 
-            greenPercent = Math.floor(((100 - magentaPercent) * (100 - blackPercent))/100);
-            greenCSS = Math.floor((greenPercent*255)/100);
+            greenPercent = Math.round(((100 - magentaPercent) * (100 - blackPercent))/100);
+            greenCSS = Math.round((greenPercent*255)/100);
 
-            bluePercent = Math.floor(((100 - yellowPercent) * (100 - blackPercent))/100);
-            blueCSS = Math.floor((bluePercent*255)/100);
+            bluePercent = Math.round(((100 - yellowPercent) * (100 - blackPercent))/100);
+            blueCSS = Math.round((bluePercent*255)/100);
         }
 
         function recalculateCMYK() {
             blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-            cyanPercent = Math.floor(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-            magentaPercent = Math.floor(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-            yellowPercent = Math.floor(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+            cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
+            magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
+            yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
         }
 
         function getRedPercent() {
@@ -64,7 +64,7 @@ angular.module('colourMatch').factory('AdjusterService',
 
         function setRed(newRedPercent) {
             redPercent = newRedPercent;
-            redCSS = Math.floor((newRedPercent*255)/100);
+            redCSS = Math.round((newRedPercent*255)/100);
             recalculateCMYK();
         }
 
@@ -78,7 +78,7 @@ angular.module('colourMatch').factory('AdjusterService',
 
         function setGreen(newGreenPercent) {
             greenPercent = newGreenPercent;
-            greenCSS = Math.floor((newGreenPercent*255)/100);
+            greenCSS = Math.round((newGreenPercent*255)/100);
             recalculateCMYK();
         }
 
@@ -92,7 +92,7 @@ angular.module('colourMatch').factory('AdjusterService',
 
         function setBlue(newBluePercent) {
             bluePercent = newBluePercent;
-            blueCSS = Math.floor((newBluePercent*255)/100);
+            blueCSS = Math.round((newBluePercent*255)/100);
             recalculateCMYK();
         } 
 

@@ -16,9 +16,9 @@ angular.module('adjuster', [])
 
 	$scope.match_black = 100 - (Math.max(Math.max($scope.match_red, $scope.match_green), $scope.match_blue));
 
-    $scope.match_cyan = Math.floor(((100 - $scope.match_red - $scope.match_black)/(100 - $scope.match_black))*100);
-    $scope.match_magenta = Math.floor(((100 - $scope.match_green - $scope.match_black)/(100 - $scope.match_black))*100);
-    $scope.match_yellow = Math.floor(((100 - $scope.match_blue - $scope.match_black)/(100 - $scope.match_black))*100);
+    $scope.match_cyan = Math.round(((100 - $scope.match_red - $scope.match_black)/(100 - $scope.match_black))*100);
+    $scope.match_magenta = Math.round(((100 - $scope.match_green - $scope.match_black)/(100 - $scope.match_black))*100);
+    $scope.match_yellow = Math.round(((100 - $scope.match_blue - $scope.match_black)/(100 - $scope.match_black))*100);
 
 	$scope.cyan_count = AdjusterService.getCyan();
 	$scope.magenta_count = AdjusterService.getMagenta();
@@ -35,7 +35,6 @@ angular.module('adjuster', [])
 		$rootScope.$emit('colourChange');
 	};
 
-
 	$scope.blueChange = function () {
 		AdjusterService.setBlue($scope.blue_count);
 		$rootScope.$emit('colourChange');
@@ -50,7 +49,6 @@ angular.module('adjuster', [])
 		AdjusterService.setMagenta($scope.magenta_count);
 		$rootScope.$emit('colourChange');
 	};
-
 
 	$scope.yellowChange = function () {
 		AdjusterService.setYellow($scope.yellow_count);
