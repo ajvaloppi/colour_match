@@ -6,53 +6,27 @@ angular.module('adjuster', [])
 .controller('adjusterController', ['$scope', '$rootScope', 'AdjusterService', 'MatcherService', function($scope, $rootScope, AdjusterService, MatcherService) {
 	$scope.done = false;
 
-	$scope.red_count = AdjusterService.getRed();
-	$scope.green_count = AdjusterService.getGreen();
-	$scope.blue_count = AdjusterService.getBlue();
+	$scope.red_count = AdjusterService.getRedPercent();
+	$scope.green_count = AdjusterService.getGreenPercent();
+	$scope.blue_count = AdjusterService.getBluePercent();
 
-	$scope.match_red = MatcherService.getRed();
-	$scope.match_green = MatcherService.getGreen();
-	$scope.match_blue = MatcherService.getBlue();
+	$scope.match_red = MatcherService.getRedPercent();
+	$scope.match_green = MatcherService.getGreenPercent();
+	$scope.match_blue = MatcherService.getBluePercent();
 
-	$scope.redUp = function () {
-		$scope.red_count += 5;
+	$scope.redChange = function () {
 		AdjusterService.setRed($scope.red_count);
-
 		$rootScope.$emit('colourChange');
 	};
 
-	$scope.redDown = function () {
-		$scope.red_count -= 5;
-		AdjusterService.setRed($scope.red_count);
-
-		$rootScope.$emit('colourChange');
-	};
-
-	$scope.greenUp = function () {
-		$scope.green_count += 5;
+	$scope.greenChange = function () {
 		AdjusterService.setGreen($scope.green_count);
-
 		$rootScope.$emit('colourChange');
 	};
 
-	$scope.greenDown = function () {
-		$scope.green_count -= 5;
-		AdjusterService.setGreen($scope.green_count);
 
-		$rootScope.$emit('colourChange');
-	};
-
-	$scope.blueUp = function () {
-		$scope.blue_count += 5;
+	$scope.blueChange = function () {
 		AdjusterService.setBlue($scope.blue_count);
-
-		$rootScope.$emit('colourChange');
-	};
-
-	$scope.blueDown = function () {
-		$scope.blue_count -= 5;
-		AdjusterService.setBlue($scope.blue_count);
-
 		$rootScope.$emit('colourChange');
 	};
 

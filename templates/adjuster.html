@@ -1,34 +1,19 @@
 <div id="red">
-	<div class="red-up up" ng-click="redUp()">
-		<button>/\</button>
-	</div>
 	<div class="red-count count">
-		{{red_count}} <span ng-show="done">{{match_red}}</span>
+		{{red_count}}% <span ng-show="done">{{match_red}}%</span>
 	</div>
-	<div class="red-down down" ng-click="redDown()">
-		<button ng-click="">\/</button>
-	</div>
+	<input type="range" id="redRange" value="{{red_count}}" ng-model="red_count" ng-change="redChange()">
 </div>
 <div id="green">
-	<div class="green-up up" ng-click="greenUp()">
-		<button>/\</button>
-	</div>
 	<div class="green-count count">
-			{{green_count}} <span ng-show="done">{{match_green}}</span>
+			{{green_count}}% <span ng-show="done">{{match_green}}%</span>
 	</div>
-	<div class="green-down down" ng-click="greenDown()">
-		<button>\/</button>
-	</div>
+	<input type="range" id="greenRange" value="{{green_count}}" ng-model="green_count" ng-change="greenChange()">
 </div>
 <div id="blue">
-	<div class="blue-up up" ng-click="blueUp()">
-		<button>/\</button>
-	</div>
 	<div class="blue-count count">
-		{{blue_count}} <span ng-show="done">{{match_blue}}</span>
+		{{blue_count}}% <span ng-show="done">{{match_blue}}%</span>
 	</div>
-	<div class="blue-down down" ng-click="blueDown()">
-		<button>\/</button>
-	</div>
+	<input type="range" id="blueRange" value="{{blue_count}}" ng-model="blue_count" ng-change="blueChange()">
 </div>
 <button ng-click="check()">Check!</button>
