@@ -10,12 +10,13 @@ body {
 }
 
 #rectangle {
-	display: inline-block;
 	position: relative;
 	width: 30%;
 	height: auto;
 	padding-top: 15%;
 	padding-bottom: 15%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #circle {
@@ -30,7 +31,10 @@ body {
 }
 
 #adjuster {
-	display: inline-block;
+	width: 30%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #red {
@@ -43,4 +47,12 @@ body {
 
 #blue {
 	background-color: blue;
+}
+
+.adjustColour {
+	border-radius: 5px;
+}
+
+.colourRange {
+	width: 90%;
 }
