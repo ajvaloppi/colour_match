@@ -18,7 +18,7 @@ angular.module('matcher', [])
 			var redDiff = MatcherService.getRedPercent() - AdjusterService.getRedPercent();
 			var greenDiff = MatcherService.getGreenPercent() - AdjusterService.getGreenPercent();
 			var blueDiff = MatcherService.getBluePercent() - AdjusterService.getBluePercent();
-			if (redDiff + greenDiff + blueDiff === 0){
+			if (redDiff === 0 && greenDiff === 0 && blueDiff === 0){
 				//if percentages match, make the rgb match perfectly. 
 				// there is sometimes a slight discrepancy because of the calculation of the percentages
 				$scope.adjust_red = $scope.match_red;
