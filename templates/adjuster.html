@@ -8,6 +8,7 @@
 	<div class="red-down down" ng-click="redDown()">
 		<button ng-click="">\/</button>
 	</div>
+	<input type="range" id="redRange" value="{{red_count}}" ng-model="red_count" ng-change="redChange()">
 </div>
 <div id="green">
 	<div class="green-up up" ng-click="greenUp()">
@@ -19,6 +20,7 @@
 	<div class="green-down down" ng-click="greenDown()">
 		<button>\/</button>
 	</div>
+	<input type="range" id="greenRange" value="{{green_count}}" ng-model="green_count" ng-change="greenChange()">
 </div>
 <div id="blue">
 	<div class="blue-up up" ng-click="blueUp()">
@@ -30,5 +32,6 @@
 	<div class="blue-down down" ng-click="blueDown()">
 		<button>\/</button>
 	</div>
+	<input type="range" id="blueRange" value="{{blue_count}}" ng-model="blue_count" ng-change="blueChange()">
 </div>
 <button ng-click="check()">Check!</button>
