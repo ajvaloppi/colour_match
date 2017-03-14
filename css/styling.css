@@ -1,8 +1,8 @@
 body {
 	font-family: "Franklin Gothic Medium";
 	background-color: #424242;
+	font-size: 18px;
 	padding: 5px;
-	font-size: 13px;
 }
 
 #matcher {

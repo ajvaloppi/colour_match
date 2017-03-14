@@ -14,6 +14,11 @@ angular.module('adjuster', [])
 	$scope.match_green = MatcherService.getGreenPercent();
 	$scope.match_blue = MatcherService.getBluePercent();
 
+	$scope.cyan_count = AdjusterService.getCyan();
+	$scope.magenta_count = AdjusterService.getMagenta();
+	$scope.yellow_count = AdjusterService.getYellow();
+	$scope.black_count = AdjusterService.getBlack();
+
 	$scope.redChange = function () {
 		AdjusterService.setRed($scope.red_count);
 		$rootScope.$emit('colourChange');
