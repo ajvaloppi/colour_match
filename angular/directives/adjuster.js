@@ -62,18 +62,31 @@ angular.module('adjuster', [])
 
 	$scope.check = function () {
 		$scope.done = true;
+		$rootScope.$emit('doneRound');
 	}
 
 	$rootScope.$on('adjustSliders', function (event, data) {
-			$scope.red_count = AdjusterService.getRedPercent();
-			$scope.green_count = AdjusterService.getGreenPercent();
-			$scope.blue_count = AdjusterService.getBluePercent();
+		$scope.red_count = AdjusterService.getRedPercent();
+		$scope.green_count = AdjusterService.getGreenPercent();
+		$scope.blue_count = AdjusterService.getBluePercent();
 
-			$scope.cyan_count = AdjusterService.getCyan();
-			$scope.magenta_count = AdjusterService.getMagenta();
-			$scope.yellow_count = AdjusterService.getYellow();
-			$scope.black_count = AdjusterService.getBlack();
-		})
+		$scope.cyan_count = AdjusterService.getCyan();
+		$scope.magenta_count = AdjusterService.getMagenta();
+		$scope.yellow_count = AdjusterService.getYellow();
+		$scope.black_count = AdjusterService.getBlack();
+	})
+
+	$rootScope.$on('refresh', function (event, data) {
+		$scope.red_count = AdjusterService.getRedPercent();
+		$scope.green_count = AdjusterService.getGreenPercent();
+		$scope.blue_count = AdjusterService.getBluePercent();
+
+		$scope.cyan_count = AdjusterService.getCyan();
+		$scope.magenta_count = AdjusterService.getMagenta();
+		$scope.yellow_count = AdjusterService.getYellow();
+		$scope.black_count = AdjusterService.getBlack();
+		$scope.done = false;
+	})
 }])
 
 .directive('adjusterDirective', function() {
