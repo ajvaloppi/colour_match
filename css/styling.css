@@ -1,8 +1,19 @@
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+
 body {
 	font-family: "Franklin Gothic Medium";
-	background-color: #424242;
 	font-size: 18px;
-	padding: 5px;
+	margin: 0px;
 }
 
 #matcher {
@@ -10,24 +21,17 @@ body {
 }
 
 #rectangle {
-	position: relative;
-	width: 30%;
-	height: auto;
-	padding-top: 15%;
-	padding-bottom: 15%;
-	margin-right: auto;
-	margin-left: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+	display: inline;
 }
 
-#circle {
-	display: inline-block;
-	position: absolute;
-	border-radius: 50%;
-	width: 60%;
-	height: auto;
-	padding-top: 60%;
-	top: 20%;
-    left: 20%;
+#text {
+	font-size: 72px;
+	text-align: center;
+	font-weight: 1000;
 }
 
 #adjuster {
@@ -35,10 +39,14 @@ body {
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
+	background-color: rgb(255,255,255);
+	padding: 15px;
+	border-radius: 5px;
 }
 
 .adjustColour {
 	border-radius: 5px;
+	margin: 5px;
 }
 
 .colourRange {
@@ -73,4 +81,3 @@ body {
 	background-color: rgb(0,0,0);
 	color: rgb(255,255,255);
 }
->>>>>>> Stashed changes
