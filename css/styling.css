@@ -5,6 +5,18 @@ body {
 	padding: 5px;
 }
 
+.modal {
+	color: #ffffff;
+	background-color: rgba(0,0,0, 0.5);
+	position: absolute;
+	width: 80%;
+	box-shadow: 0 0 5px 10px rgba(0,0,0, 0.5);
+	z-index: 100;
+	left: 10%;
+	top: 40px;
+	bottom: 40px;
+}
+
 #matcher {
 	display: inline;
 }
