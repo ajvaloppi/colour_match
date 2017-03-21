@@ -33,8 +33,17 @@ angular.module('matcher', [])
 			
 			$rootScope.$emit('adjustSliders');
 
-			console.log($scope.match_red, $scope.match_green, $scope.match_blue);
-			console.log($scope.adjust_red, $scope.adjust_green, $scope.adjust_blue);
+			
+		})
+
+		$rootScope.$on('refresh', function (event, data) {
+			$scope.adjust_red = AdjusterService.getRedCSS();
+			$scope.adjust_green = AdjusterService.getGreenCSS();
+			$scope.adjust_blue = AdjusterService.getBlueCSS();
+
+			$scope.match_red = MatcherService.getRedCSS();
+			$scope.match_green = MatcherService.getGreenCSS();
+			$scope.match_blue = MatcherService.getBlueCSS();
 		})
 }])
 
