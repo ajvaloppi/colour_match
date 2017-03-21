@@ -63,13 +63,13 @@ angular.module('adjuster', [])
 	$scope.check = function () {
 		$scope.done = true;
 
-		var newRed = AdjusterService.getRedCSS();
-		var newGreen = AdjusterService.getGreenCSS();
-		var newBlue = AdjusterService.getBlueCSS();
+		var newRed = AdjusterService.getRedPercent();
+		var newGreen = AdjusterService.getGreenPercent();
+		var newBlue = AdjusterService.getBluePercent();
 
-		var oldRed = MatcherService.getRedCSS();
-		var oldGreen = MatcherService.getGreenCSS();
-		var oldBlue = MatcherService.getBlueCSS();
+		var oldRed = MatcherService.getRedPercent();
+		var oldGreen = MatcherService.getGreenPercent();
+		var oldBlue = MatcherService.getBluePercent();
 
 		var changeRed = Math.pow(newRed - oldRed, 2);
 		var changeGreen = Math.pow(newGreen - oldGreen, 2);
@@ -77,7 +77,7 @@ angular.module('adjuster', [])
 
 		// Source: https://en.wikipedia.org/wiki/Color_difference#Euclidean
 		var colourDistance = Math.sqrt(2*changeRed + 4*changeGreen + 3*changeBlue);
-		AdjusterService.setCorrectness((1 - colourDistance/765)* 100);
+		AdjusterService.setCorrectness((1 - colourDistance/300)* 100);
 
 		$rootScope.$emit('doneRound');
 	}
