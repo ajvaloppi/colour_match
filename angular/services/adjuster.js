@@ -15,6 +15,8 @@ angular.module('colourMatch').factory('AdjusterService',
         var magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
         var yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
 
+        var correctness = 0;
+
         return ({
             getRedPercent: getRedPercent,
             getRedCSS: getRedCSS,
@@ -33,8 +35,18 @@ angular.module('colourMatch').factory('AdjusterService',
             setYellow: setYellow,
             getBlack: getBlack,
             setBlack: setBlack,
-            refresh: newColours
+            refresh: newColours,
+            getCorrectness: getCorrectness,
+            setCorrectness: setCorrectness
         });
+
+        function getCorrectness() {
+            return correctness;
+        }
+
+        function setCorrectness(newCorrectness) {
+            correctness = newCorrectness;
+        }
 
         function newColours() {
             redCSS = Math.round(Math.random() * 255);

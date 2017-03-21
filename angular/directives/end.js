@@ -14,6 +14,7 @@ angular.module('end', [])
 
 		$rootScope.$on('doneRound', function (event, data) {
 			$scope.end = true;
+			$scope.correctness = Math.round(AdjusterService.getCorrectness() * 100) / 100;
 		})
 }])
 
