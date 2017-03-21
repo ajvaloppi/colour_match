@@ -11,9 +11,16 @@ angular.module('colourMatch').factory('AdjusterService',
 
         var blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-        var cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-        var magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-        var yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+        if (blackPercent != 100) {
+            cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
+            magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
+            yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+        }
+        else {
+            cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - 99))*100);
+            magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - 99))*100);
+            yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - 99))*100);
+        }
 
         var correctness = 0;
 
@@ -59,9 +66,16 @@ angular.module('colourMatch').factory('AdjusterService',
 
             blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-            cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-            magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-            yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+            if (blackPercent != 100) {
+                cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
+                magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
+                yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+            }
+            else {
+                cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - 99))*100);
+                magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - 99))*100);
+                yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - 99))*100);
+            }
         }
 
         function recalculateRGB() {
@@ -78,9 +92,16 @@ angular.module('colourMatch').factory('AdjusterService',
         function recalculateCMYK() {
             blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-            cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-            magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-            yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+            if (blackPercent != 100) {
+                cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
+                magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
+                yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+            }
+            else {
+                cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - 99))*100);
+                magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - 99))*100);
+                yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - 99))*100);
+            }
         }
 
         function getRedPercent() {
