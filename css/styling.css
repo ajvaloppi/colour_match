@@ -5,15 +5,20 @@ html {
 }
 
 body {
-   margin: 0px;
-   min-height: 100%;
-   width: 100%;
-}
-
-body {
-	font-family: "Franklin Gothic Medium";
+	margin: 0px;
+	min-height: 100%;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	margin: 0px;
+}
+
+#body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 }
 
 .modal {
@@ -43,7 +48,8 @@ body {
 #text {
 	font-size: 72px;
 	text-align: center;
-	font-weight: 1000;
+	font-family: 'Bungee', cursive;
+	margin-bottom: 25px;
 }
 
 #adjuster {
