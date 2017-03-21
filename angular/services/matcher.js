@@ -19,7 +19,18 @@ angular.module('colourMatch').factory('MatcherService',
             getBluePercent: getBluePercent,
             getBlueCSS: getBlueCSS,
             setBlue: setBlue,
+            refresh: newColours
         });
+
+        function newColours() {
+            redCSS = Math.round(Math.random() * 255);
+            greenCSS = Math.round(Math.random() * 255);
+            blueCSS = Math.round(Math.random() * 255);
+            
+            redPercent = Math.round((redCSS/255)*100);
+            greenPercent = Math.round((greenCSS/255)*100);
+            bluePercent = Math.round((blueCSS/255)*100);
+        }
 
         function getRedPercent() {
             return redPercent;
