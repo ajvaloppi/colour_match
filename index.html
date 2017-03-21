@@ -5,8 +5,8 @@
 	<title>COLOUR MATCH</title>
 	<link rel="stylesheet" href="css/styling.css"/>
 </head>
-<body ng-controller="matcherController" style="background-color: rgb({{match_red}},{{match_green}},{{match_blue}});">
-	<div id="body">
+<body>
+	<div id="body" ng-controller="matcherController" style="background-color: rgb({{match_red}}, {{match_green}}, {{match_blue}});">
 		<div id="startScreen" start-directive ng-controller="startController"></div>
 		<div>
 			<div id="matcher" matcher-directive ng-controller="matcherController"></div>
