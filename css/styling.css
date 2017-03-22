@@ -23,14 +23,15 @@ body {
 
 .modal {
 	color: #ffffff;
-	background-color: rgba(0,0,0, 0.5);
+	background-color: rgba(0,0,0, 0.8);
 	position: absolute;
 	width: 80%;
-	box-shadow: 0 0 5px 10px rgba(0,0,0, 0.5);
+	box-shadow: 0 0 5px 10px rgba(0,0,0, 0.8);
 	z-index: 100;
 	left: 10%;
 	top: 40px;
 	bottom: 40px;
+	text-align: center;
 }
 
 #matcher {
@@ -52,7 +53,14 @@ body {
 	margin-bottom: 25px;
 }
 
-#adjuster {
+.colourSpaces {
+	font-size: 36px;
+	text-align: center;
+	font-family: 'Bungee', cursive;
+	margin-bottom: 25px;
+}
+
+.sliders {
 	width: 30%;
 	text-align: center;
 	margin-right: auto;
@@ -98,4 +106,8 @@ body {
 #black {
 	background-color: rgb(0,0,0);
 	color: rgb(255,255,255);
+}
+
+#celebrationGif {
+	width: 50%;
 }

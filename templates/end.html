@@ -1,6 +1,15 @@
 <div id="end" class="modal" ng-show="end">
-	THIS IS THE END SCREEN
-	YOU WERE {{correctness}}% CORRECT!!
-	<button ng-click="refreshGame()">AGAIN</button>
-	<img src="{{gif}}" alt="Celebration Gif" style="width:304px;height:228px;">
+	<div>YOU WERE {{correctness}}% CORRECT!!</div>
+	<br>
+	<img id="celebrationGif" src="{{gif}}" alt="Celebration Gif" ng-hide="hideGif">
+	<div>You were off red by {{redDiff}}%</div>
+	<div>You were off green by {{greenDiff}}%</div>
+	<div>You were off blue by {{blueDiff}}%</div>
+	<div>You were off cyan by {{cyanDiff}}%</div>
+	<div>You were off magenta by {{magentaDiff}}%</div>
+	<div>You were off yellow by {{yellowDiff}}%</div>
+	<div>You were off black by {{blackDiff}}%</div>
+	<br>
+	<div>AGAIN?!</div>
+	<button ng-click="refreshGame()">AGAIN!!</button>
 </div>
