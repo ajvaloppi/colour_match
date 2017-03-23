@@ -17,7 +17,6 @@ body {
 	font-size: 18px;
 	text-align: center;
 	font-family: 'Bungee', cursive;
-	margin-bottom: 25px;
 	border-radius: 5px;
 	border-width: 0px;
 	background-color: rgb(255,255,255);
@@ -40,8 +39,8 @@ body {
 	z-index: 100;
 	left: 10%;
 	top: 40px;
-	bottom: 40px;
 	text-align: center;
+	padding: 15px;
 }
 
 #matcher {
@@ -122,6 +121,7 @@ body {
 	width: 50%;
 }
 
+/*The slider styling was made with help from: http://www.cssportal.com/style-input-range/*/
 input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
