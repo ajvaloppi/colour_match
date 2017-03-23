@@ -38,7 +38,6 @@ angular.module('end', [])
 		        yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - 99))*100);
 		    }
 
-		    console.log(AdjusterService.getCyan(), AdjusterService.getMagenta(), AdjusterService.getYellow());
 			$scope.cyanDiff = Math.abs(AdjusterService.getCyan() - cyanPercent);
 			$scope.magentaDiff = Math.abs(AdjusterService.getMagenta() - magentaPercent);
 			$scope.yellowDiff = Math.abs(AdjusterService.getYellow() - yellowPercent);
@@ -54,8 +53,6 @@ angular.module('end', [])
 			else {
 				reaction = "you+got+this";
 			}
-
-			console.log(reaction);
 
 			$http.get("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + reaction + "&rating=pg-13")
 			.then(function(response){ 
