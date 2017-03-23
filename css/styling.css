@@ -30,6 +30,34 @@ body {
 	left: 0;
 }
 
+#helpBtn {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+#closeHelp {
+	text-align: right;
+    margin-bottom: 10px;
+}
+
+#closeHelp button{
+	font-size: 12px!important;
+}
+
+.helpText {
+	margin-right: 15px!important;
+}
+
+.helpModal {
+	padding-top: 0px!important;
+	padding-right: 6px!important;
+}
+
+.instructions {
+	text-align: left;
+}
+
 .modal {
 	color: rgb(255,255,255);
 	background-color: rgba(0,0,0, 0.8);
