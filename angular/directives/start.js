@@ -3,10 +3,20 @@
 angular.module('start', [])
 
 .controller('startController', ['$scope', function($scope) {
-		$scope.start = true;
+		$scope.showInstructions = true;
+		$scope.help = false;
 
 		$scope.startGame = function () {
-			$scope.start = false;
+			$scope.showInstructions = false;
+			$scope.help = true;
+		}
+
+		$scope.showHelp = function () {
+			$scope.showInstructions = true;
+		}
+
+		$scope.closeHelp = function () {
+			$scope.showInstructions = false;
 		}
 }])
 

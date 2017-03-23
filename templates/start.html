@@ -1,5 +1,9 @@
-<div id="start" class="modal" ng-show="start">
-	<div style="text-align: left;">
+<button id="helpBtn" class="button" ng-click="showHelp()" ng-show="!showInstructions">?</button>
+<div id="start" class="modal" ng-show="showInstructions" ng-class="{helpModal: help}">
+	<div id="closeHelp">
+		<button class="button" ng-click="closeHelp()" ng-show="help">X</button>
+	</div>
+	<div class="instructions" ng-class="{helpText: help}">
 		<div>
 			RGB is the colour model used by things like computers. It is an additive colour model, which means that all the colours mixed together makes white. 
 		</div>
@@ -16,6 +20,8 @@
 		</div>
 	</div>
 	<br>
-	<div>Good luck!</div>
-	<button class="button" ng-click="startGame()">LET'S GO</button>
+	<div ng-hide="help">
+		<div>Good luck!</div>
+		<button class="button" ng-click="startGame()">LET'S GO</button>
+	</div>
 </div>
