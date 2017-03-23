@@ -57,7 +57,7 @@ angular.module('end', [])
 
 			console.log(reaction);
 
-			$http.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + reaction + "&rating=pg-13")
+			$http.get("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + reaction + "&rating=pg-13")
 			.then(function(response){ 
 				$scope.gif = response.data.data.image_original_url; 
 				$scope.end = true;
