@@ -46,10 +46,10 @@ angular.module('end', [])
 			$scope.blackDiff = Math.abs(AdjusterService.getBlack() - oldBlackPercent);
 
 			var reaction = ""
-			if ($scope.correctness < 50) {
+			if ($scope.correctness < 60) {
 				reaction = "oh+no";
 			}
-			else if ($scope.correctness > 75) {
+			else if ($scope.correctness > 80) {
 				reaction = "celebrate";
 			}
 			else {
@@ -58,7 +58,6 @@ angular.module('end', [])
 
 			$http.get("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + reaction + "&rating=pg-13")
 			.then(function(response){ 
-				
 				var gif = response.data.data.image_original_url;
 				console.log(gif); 
 				if (gif[4] != 's') {
