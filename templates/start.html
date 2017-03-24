@@ -1,11 +1,34 @@
 <button id="helpBtn" class="button" ng-click="showHelp()" ng-show="!showInstructions">?</button>
-<div id="start" class="modal" ng-show="showInstructions" ng-class="{helpModal: help}">
-	<div id="closeHelp">
-		<button class="button" ng-click="closeHelp()" ng-show="help">X</button>
-	</div>
-	<div class="instructions" ng-class="{helpText: help}">
-		<div>
-			RGB is the colour model used by things like computers. It is an additive colour model, which means that all the colours mixed together makes white. 
+<div class="overlay" ng-show="showInstructions" >
+	<div id="start" class="modal" ng-class="{helpModal: help}">
+		<div id="closeHelp">
+			<button class="button" ng-click="closeHelp()" ng-show="help">X</button>
+		</div>
+		<div class="instructions" ng-class="{helpText: help}">
+			<div>
+				RGB is the colour model used by things like computers. It is an additive colour model, which means that all the colours mixed together makes white. 
+			</div>
+			<br>
+			<div>
+				CMYK is the colour model used by things like paint and printers. It is a subtractive colour model, which means that al the colours mixed together makes black.
+			</div> 
+			<br>
+			<div>
+				To get the best results, you will have to adjust the brightness and contrast of your screen. <br>
+				In the image below, adjust your contrast until you can just see the difference of the last two white stripes (20 and 21). <br>
+				Then, adjust your brightness until you can just see the difference of the first two black stripes (01 and 02). 
+			</div>
+			<div id="adjustImg">
+				<img src="css/adjust.png">
+				<div id="adjustImgText">These instructions and image were taken from http://colornaming.net/</div>
+			</div>
+			<br>
+			<div>
+				Instructions: <br>
+				1) Adjust the sliders <br>
+				2) Try to match the words to the background <br>
+				3) Click "CHECK MY MATCH" to see how well you did <br>
+			</div>
 		</div>
 		<br>
 		<div>
@@ -18,10 +41,10 @@
 			2) Try to match the words to the background <br>
 			3) Click "CHECK MY MATCH" to see how well you did <br>
 		</div>
-	</div>
-	<br>
-	<div ng-hide="help">
-		<div>Good luck!</div>
-		<button class="button" ng-click="startGame()">LET'S GO</button>
+		<br>
+		<div ng-hide="help">
+			<div>Good luck!</div>
+			<button class="button" ng-click="startGame()">LET'S GO</button>
+		</div>
 	</div>
 </div>
