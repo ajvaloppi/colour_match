@@ -58,8 +58,16 @@ angular.module('end', [])
 
 			$http.get("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + reaction + "&rating=pg-13")
 			.then(function(response){ 
-				var gif = response.data.data.image_original_url; 
-				$scope.gif = [gif.slice(0, 4), 's', gif.slice(4)].join('');
+				
+				var gif = response.data.data.image_original_url;
+				console.log(gif); 
+				if (gif[4] != 's') {
+					$scope.gif = [gif.slice(0, 4), 's', gif.slice(4)].join('');
+				}
+				else {
+					$scope.gif = gif;
+				}
+
 				$scope.end = true;
 			}, function() {
 					$scope.end = true;
