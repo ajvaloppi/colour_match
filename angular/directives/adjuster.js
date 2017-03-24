@@ -3,7 +3,7 @@
 
 angular.module('adjuster', [])
 
-.controller('adjusterController', ['$scope', '$rootScope', 'AdjusterService', 'MatcherService', function($scope, $rootScope, AdjusterService, MatcherService) {
+.controller('adjusterController', ['$scope', '$rootScope', 'AdjusterService', 'MatcherService', 'ColourConversionService', function($scope, $rootScope, AdjusterService, MatcherService, ColourConversionService) {
 	$scope.done = false;
 
 	$scope.red_count = AdjusterService.getRedPercent();
@@ -26,37 +26,37 @@ angular.module('adjuster', [])
 	$scope.black_count = AdjusterService.getBlack();
 
 	$scope.redChange = function () {
-		AdjusterService.setRed($scope.red_count);
+		AdjusterService.setRed(parseInt($scope.red_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.greenChange = function () {
-		AdjusterService.setGreen($scope.green_count);
+		AdjusterService.setGreen(parseInt($scope.green_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.blueChange = function () {
-		AdjusterService.setBlue($scope.blue_count);
+		AdjusterService.setBlue(parseInt($scope.blue_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.cyanChange = function () {
-		AdjusterService.setCyan($scope.cyan_count);
+		AdjusterService.setCyan(parseInt($scope.cyan_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.magentaChange = function () {
-		AdjusterService.setMagenta($scope.magenta_count);
+		AdjusterService.setMagenta(parseInt($scope.magenta_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.yellowChange = function () {
-		AdjusterService.setYellow($scope.yellow_count);
+		AdjusterService.setYellow(parseInt($scope.yellow_count));
 		$rootScope.$emit('colourChange');
 	};
 
 	$scope.blackChange = function () {
-		AdjusterService.setBlack($scope.black_count);
+		AdjusterService.setBlack(parseInt($scope.black_count));
 		$rootScope.$emit('colourChange');
 	};
 
@@ -71,13 +71,19 @@ angular.module('adjuster', [])
 		var oldGreen = MatcherService.getGreenPercent();
 		var oldBlue = MatcherService.getBluePercent();
 
-		var changeRed = Math.pow(newRed - oldRed, 2);
-		var changeGreen = Math.pow(newGreen - oldGreen, 2);
-		var changeBlue = Math.pow(newBlue - oldBlue, 2);
+		var newLab = ColourConversionService.rgb2lab(newRed, newGreen, newBlue);
+		var oldLab = ColourConversionService.rgb2lab(oldRed, oldGreen, oldBlue);
 
-		// Source: https://en.wikipedia.org/wiki/Color_difference#Euclidean
-		var colourDistance = Math.sqrt(2*changeRed + 4*changeGreen + 3*changeBlue);
-		AdjusterService.setCorrectness((1 - colourDistance/300)* 100);
+		var difference = ColourConversionService.deltaE(newLab, oldLab);
+
+		var length = ColourConversionService.fullLength(newLab, oldLab);
+
+		if (length != 0){
+			AdjusterService.setCorrectness(100 - (difference / length) * 100);
+		}
+		else {
+			AdjusterService.setCorrectness(100);
+		}
 
 		$rootScope.$emit('doneRound');
 	}
