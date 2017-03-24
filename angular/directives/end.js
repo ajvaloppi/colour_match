@@ -25,23 +25,25 @@ angular.module('end', [])
 			var greenPercent = MatcherService.getGreenPercent();
 			var bluePercent = MatcherService.getBluePercent();
 
-			var blackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
+			var oldBlackPercent = 100 - (Math.max(Math.max(redPercent, greenPercent), bluePercent));
 
-		    if (blackPercent != 100) {
-		        cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - blackPercent))*100);
-		        magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - blackPercent))*100);
-		        yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - blackPercent))*100);
+		    if (oldBlackPercent != 100) {
+		        var oldCyanPercent = Math.round(((100 - redPercent - oldBlackPercent)/(100 - oldBlackPercent))*100);
+		        var oldMagentaPercent = Math.round(((100 - greenPercent - oldBlackPercent)/(100 - oldBlackPercent))*100);
+		        var oldYellowPercent = Math.round(((100 - bluePercent - oldBlackPercent)/(100 - oldBlackPercent))*100);
 		    }
+
 		    else {
-		        cyanPercent = Math.round(((100 - redPercent - blackPercent)/(100 - 99))*100);
-		        magentaPercent = Math.round(((100 - greenPercent - blackPercent)/(100 - 99))*100);
-		        yellowPercent = Math.round(((100 - bluePercent - blackPercent)/(100 - 99))*100);
+		        var oldCyanPercent = Math.round(((100 - redPercent - oldBlackPercent)/(100 - 99))*100);
+		        var oldMagentaPercent = Math.round(((100 - greenPercent - oldBlackPercent)/(100 - 99))*100);
+		        var oldYellowPercent = Math.round(((100 - bluePercent - oldBlackPercent)/(100 - 99))*100);
 		    }
 
-			$scope.cyanDiff = Math.abs(AdjusterService.getCyan() - cyanPercent);
-			$scope.magentaDiff = Math.abs(AdjusterService.getMagenta() - magentaPercent);
-			$scope.yellowDiff = Math.abs(AdjusterService.getYellow() - yellowPercent);
-			$scope.blackDiff = Math.abs(AdjusterService.getBlack() - blackPercent);
+
+			$scope.cyanDiff = Math.abs(AdjusterService.getCyan() - oldCyanPercent);
+			$scope.magentaDiff = Math.abs(AdjusterService.getMagenta() - oldMagentaPercent);
+			$scope.yellowDiff = Math.abs(AdjusterService.getYellow() - oldYellowPercent);
+			$scope.blackDiff = Math.abs(AdjusterService.getBlack() - oldBlackPercent);
 
 			var reaction = ""
 			if ($scope.correctness < 50) {
