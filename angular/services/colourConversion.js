@@ -108,7 +108,6 @@ angular.module('colourMatch').factory('ColourConversionService',
             var deltaB = Math.pow(labA[2] - labB[2],2);
 
             var deltaE = Math.sqrt(deltaL + deltaA + deltaB);
-            console.log(deltaE);
             return deltaE;
         }
 
