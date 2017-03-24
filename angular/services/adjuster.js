@@ -3,7 +3,7 @@ angular.module('colourMatch').factory('AdjusterService',
     function () {
         var redCSS = Math.round(Math.random() * 255);
         var greenCSS = Math.round(Math.random() * 255);
-        var blueCSS = 0;//Math.round(Math.random() * 255);
+        var blueCSS = Math.round(Math.random() * 255);
 
         console.log(redCSS, greenCSS, blueCSS);
         

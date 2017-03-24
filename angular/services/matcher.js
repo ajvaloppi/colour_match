@@ -3,13 +3,15 @@ angular.module('colourMatch').factory('MatcherService',
     function () {
         var redCSS = Math.round(Math.random() * 255);
         var greenCSS = Math.round(Math.random() * 255);
-        var blueCSS = 0;//Math.round(Math.random() * 255);
+        var blueCSS = Math.round(Math.random() * 255);
 
         console.log(redCSS, greenCSS, blueCSS);
         
         var redPercent = Math.round((redCSS/255)*100);
         var greenPercent = Math.round((greenCSS/255)*100);
         var bluePercent = Math.round((blueCSS/255)*100);
+
+        console.log(redPercent, greenPercent, bluePercent);
 
         return ({
             getRedPercent: getRedPercent,
