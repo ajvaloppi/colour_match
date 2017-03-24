@@ -76,7 +76,15 @@ angular.module('adjuster', [])
 
 		var difference = ColourConversionService.deltaE(newLab, oldLab);
 
-		AdjusterService.setCorrectness(100 - difference);
+		var length = ColourConversionService.fullLength(newLab, oldLab);
+
+		if (length != 0){
+			AdjusterService.setCorrectness(100 - (difference / length) * 100);
+		}
+		else {
+			AdjusterService.setCorrectness(100);
+		}
+
 		$rootScope.$emit('doneRound');
 	}
 
