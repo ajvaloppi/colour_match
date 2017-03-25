@@ -32,8 +32,9 @@ body {
 
 #helpBtn {
 	position: absolute;
-	right: 10px;
+	right: 15px;
 	top: 10px;
+	font-size: 28px;
 }
 
 #closeHelp {
