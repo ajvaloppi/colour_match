@@ -167,7 +167,7 @@ body {
 	width: 30%;
 }
 
-/*The slider styling was made with help from: http://www.cssportal.com/style-input-range/*/
+/* The slider styling was made with help from: http://www.cssportal.com/style-input-range/ */
 input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
