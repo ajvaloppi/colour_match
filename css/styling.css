@@ -30,6 +30,14 @@ body {
 	left: 0;
 }
 
+#adjustImg {
+	text-align: center;
+}
+
+#adjustImgText {
+	font-size: 10px;
+}
+
 #helpBtn {
 	position: absolute;
 	right: 15px;
@@ -156,7 +164,7 @@ body {
 }
 
 #celebrationGif {
-	width: 50%;
+	width: 30%;
 }
 
 /*The slider styling was made with help from: http://www.cssportal.com/style-input-range/*/
