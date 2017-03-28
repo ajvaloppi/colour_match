@@ -1,3 +1,5 @@
+// The service for the math involved in calculating the final percentage correct (on the end screen)
+
 angular.module('colourMatch').factory('ColourConversionService',
     [
     function () {
@@ -10,6 +12,7 @@ angular.module('colourMatch').factory('ColourConversionService',
             fullLength: fullLength
         });
 
+        // finds where the line represented by x, y, z intersects the plane given
         function getPlanePoint (plane, x, y, z) {
             var T = plane.solveFor("t");
 
@@ -101,6 +104,7 @@ angular.module('colourMatch').factory('ColourConversionService',
             return [L, a, b];
         }
 
+        // calculates the visual difference between two colours, labA and labB
         // http://colormine.org/delta-e-calculator/
         function deltaE(labA, labB){
             var deltaL = Math.pow(labA[0] - labB[0],2);
@@ -111,6 +115,7 @@ angular.module('colourMatch').factory('ColourConversionService',
             return deltaE;
         }
 
+        // Given two Lab colours, A and B, find the length of the full line (equation calculated using these points) within the Lab cube.
         function fullLength (A, B) {
             // first find the equation of line AB
             var a = B[0] - A[0];
@@ -139,6 +144,7 @@ angular.module('colourMatch').factory('ColourConversionService',
 
             var plane;
             var point;
+
             // check every plane that makes up our Lab cube space for intersection.
             // 0=x plane
             plane = new Equation(x, 0);

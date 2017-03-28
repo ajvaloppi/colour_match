@@ -1,3 +1,6 @@
+// The service holing all the information for the colour changing of the background (the thing we are matching to)
+
+
 angular.module('colourMatch').factory('MatcherService',
     [
     function () {
@@ -22,20 +25,12 @@ angular.module('colourMatch').factory('MatcherService',
             refresh: newColours
         });
 
-        function newColours() {
-            redCSS = Math.round(Math.random() * 255);
-            greenCSS = Math.round(Math.random() * 255);
-            blueCSS = Math.round(Math.random() * 255);
-            
-            redPercent = Math.round((redCSS/255)*100);
-            greenPercent = Math.round((greenCSS/255)*100);
-            bluePercent = Math.round((blueCSS/255)*100);
-        }
-
+        // 0 to 100
         function getRedPercent() {
             return redPercent;
         }
 
+        // 0 to 255
         function getRedCSS() {
             return redCSS;
         }
@@ -45,10 +40,12 @@ angular.module('colourMatch').factory('MatcherService',
             redCSS = Math.round((newRedPercent*255)/100);
         }
 
+        // 0 to 100
         function getGreenPercent() {
             return greenPercent;
         }
 
+        // 0 to 255
         function getGreenCSS() {
             return greenCSS;
         }
@@ -58,10 +55,12 @@ angular.module('colourMatch').factory('MatcherService',
             greenCSS = Math.round((newGreenPercent*255)/100);
         }
 
+        // 0 to 100
         function getBluePercent() {
             return bluePercent;
         }
 
+        // 0 to 255
         function getBlueCSS() {
             return blueCSS;
         }
@@ -70,4 +69,16 @@ angular.module('colourMatch').factory('MatcherService',
             bluePercent = newBluePercent;
             blueCSS = Math.round((newBluePercent*255)/100);
         } 
+
+        // calculates the new colour
+        // used when one game is done
+        function newColours() {
+            redCSS = Math.round(Math.random() * 255);
+            greenCSS = Math.round(Math.random() * 255);
+            blueCSS = Math.round(Math.random() * 255);
+            
+            redPercent = Math.round((redCSS/255)*100);
+            greenPercent = Math.round((greenCSS/255)*100);
+            bluePercent = Math.round((blueCSS/255)*100);
+        }
 }]);
