@@ -15,69 +15,73 @@ angular.module('adjuster', [])
 	$scope.yellow_count = AdjusterService.getYellow();
 	$scope.black_count = AdjusterService.getBlack();
 
-	// when the red slider is adjusted, we need to change red and cyan percent
+	// displays proper percents for all colours (adjusting one colour changes other in colour del)
+	// happens on a slider change
+	function adjustSliderPercents() {
+		$scope.red_count = AdjusterService.getRedPercent();
+		$scope.green_count = AdjusterService.getGreenPercent();
+		$scope.blue_count = AdjusterService.getBluePercent();
+
+		$scope.cyan_count = AdjusterService.getCyan();
+		$scope.magenta_count = AdjusterService.getMagenta();
+		$scope.yellow_count = AdjusterService.getYellow();
+		$scope.black_count = AdjusterService.getBlack();
+	}
+
+	// when the red slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.redChange = function () {
 		AdjusterService.setRed(parseInt($scope.red_count));
-		$scope.red_count = AdjusterService.getRedPercent();
-		$scope.cyan_count = AdjusterService.getCyan();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the green slider is adjusted, we need to change green and magenta percent
+	// when the green slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.greenChange = function () {
 		AdjusterService.setGreen(parseInt($scope.green_count));
-		$scope.green_count = AdjusterService.getGreenPercent();
-		$scope.magenta_count = AdjusterService.getMagenta();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the blue slider is adjusted, we need to change blue and yellow percent
+	// when the blue slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.blueChange = function () {
 		AdjusterService.setBlue(parseInt($scope.blue_count));
-		$scope.blue_count = AdjusterService.getBluePercent();
-		$scope.yellow_count = AdjusterService.getYellow();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the cyan slider is adjusted, we need to change cyan and red percent
+	// when the cyan slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.cyanChange = function () {
 		AdjusterService.setCyan(parseInt($scope.cyan_count));
-		$scope.cyan_count = AdjusterService.getCyan();
-		$scope.red_count = AdjusterService.getRedPercent();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the red slider is adjusted, we need to change red and cyan percent
+	// when the red slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.magentaChange = function () {
 		AdjusterService.setMagenta(parseInt($scope.magenta_count));
-		$scope.green_count = AdjusterService.getGreenPercent();
-		$scope.magenta_count = AdjusterService.getMagenta();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the yellow slider is adjusted, we need to change yellow and blue percent
+	// when the yellow slider is adjusted, we need to adjust the other slider percents
 	// and then tell the font/background to change
 	$scope.yellowChange = function () {
 		AdjusterService.setYellow(parseInt($scope.yellow_count));
-		$scope.yellow_count = AdjusterService.getYellow();
-		$scope.blue_count = AdjusterService.getBluePercent();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
-	// when the black slider is adjusted, we need to change the black, red, green and blue percents 
+	// when the black slider is adjusted, we need to adjust the other slider percents
 	// (since black is calculated with rgb)
 	// and then tell the font/background to change
 	$scope.blackChange = function () {
 		AdjusterService.setBlack(parseInt($scope.black_count));
-		$scope.black_count = AdjusterService.getBlack();
-		$scope.red_count = AdjusterService.getRedPercent();
-		$scope.green_count = AdjusterService.getGreenPercent();
-		$scope.blue_count = AdjusterService.getBluePercent();
+		adjustSliderPercents()
 		$rootScope.$emit('colourChange');
 	};
 
