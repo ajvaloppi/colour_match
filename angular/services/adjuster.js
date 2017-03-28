@@ -166,7 +166,7 @@ angular.module('colourMatch').factory('AdjusterService',
         }
 
         // calculates the new colour
-        // used when one game is done
+        // used when one round is done
         function newColours() {
             redCSS = Math.round(Math.random() * 255);
             greenCSS = Math.round(Math.random() * 255);

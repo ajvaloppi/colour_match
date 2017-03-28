@@ -10,7 +10,7 @@ angular.module('end', [])
 
 		// hides the end screen
 		// recalcuates the background and font colour
-		// tells the rest of the app that a new game has been started
+		// tells the rest of the app that a new round has been started
 		$scope.refreshGame = function () {
 			$scope.end = false;
 			MatcherService.refresh();
