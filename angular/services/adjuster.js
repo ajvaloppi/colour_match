@@ -1,4 +1,4 @@
-// The service holing all the information for the colour changing of the font (the thing we are changing the colour of)
+// The service holding all the information for the colour changing of the font (the thing we are changing the colour of)
 
 angular.module('colourMatch').factory('AdjusterService',
     [
