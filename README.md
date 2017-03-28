@@ -7,6 +7,6 @@
 ### To see live version
 Go to https://ajvaloppi.github.io/colour_match/
 
-All of the HTML is in either index.html or in the templates folder
-All of the styling is in css/styling.css
-All of functionality is within the angular folder
+* All of the HTML is in either index.html or in the templates folder
+* All of the styling is in css/styling.css
+* All of functionality is within the angular folder
